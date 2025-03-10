@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bashion Fashion</title>
+  <link rel="icon" type="image/webp" href="assets/favicon_io/favicon-32x32.webp">
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const burger = document.getElementById("burger");
+  const menu = document.getElementById("menu");
+  const closeMenu = document.getElementById("closeMenu");
+
+  // Membuka menu
+  burger.addEventListener("click", () => {
+    console.log("Burger clicked");
+    menu.style.display = "block";
+  });
+
+  // Menutup menu
+  closeMenu.addEventListener("click", () => {
+    console.log("Close clicked");
+    menu.style.display = "none";
+  });
+});
+
+    // Ambil parameter dari URL
+    function loadItem() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const name = urlParams.get('name');
+      const price = urlParams.get('price');
+      const image = urlParams.get('image');
+      const description = urlParams.get('description'); 
+
+      // Update konten halaman
+      document.getElementById('itemName').textContent = name;
+      document.getElementById('itemPrice').textContent = price;
+      document.getElementById('itemImage').src = image;
+      document.getElementById('itemDescription').textContent = description; 
+
+      let liked = false;
+      function toggleLike() {
+        liked = !liked;
+        const likeButton = document.getElementById('likeButton');
+        likeButton.textContent = liked ? '❤️ Liked' : '♡ Like';
+        likeButton.style.backgroundColor = liked ? 'red' : 'orange';
+      }
+      }
+
+      
+      
+  </script>
+  <style>
+     body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+      -webkit-text-fill-color: white;
+      font-size: 20px;
+      background-color: #e29260;
+    }
+    img {
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: rgb(186, 90, 0);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .button:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body onload="loadItem()">
+
+
+  
+  <h1>Preview Item</h1>
+  <img id="itemImage" alt="Product Image">
+  <h2 id="itemName"></h2>
+  <p id="itemPrice" style="color: rgb(255, 255, 255); font-size: 18px; font-weight: bold;"></p>
+  <p id="itemDescription" style="font-size: 16px; color: gray;"></p> 
+
+  <!-- Tombol Like -->
+  <button id="likeButton" class="button" onclick="toggleLike()">♡ Like</button>
+  
+  <!-- Tombol Back -->
+  <button onclick="window.history.back()" class="button">Back to Shop</button>
+  <div class="outline outline-white">
+    <h1>Item Description</h1>
+    <p class="text-white text-2xl mx-20 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum modi recusandae nemo exercitationem laborum
+     dolorum quia ea, explicabo libero, optio accusamus minus numquam praesentium culpa laudantium! Itaque temporibu
+     s quas maiores tempora voluptatum tempore, quasi ex vero optio in cupiditate magnam harum animi. Perspiciatis,
+      consectetur quisquam. Iste officia repudiandae excepturi unde voluptatibus, nisi, consequatur amet qui aperiam 
+      assumenda dolorem saepe commodi! Quas fugit voluptate inventore laboriosam id laudantium dolor dignissimos porro
+       vel reiciendis aliquam voluptatum maiores, dolore quibusdam animi sequi illum nobis quaerat atque nemo blanditiis
+       ! Hic deleniti quaerat sunt, vel similique suscipit temporibus aspernatur quisquam quasi cum, sint incidunt et 
+       nisi. Ipsum sed velit debitis unde, ad quas fugiat reiciendis esse molestias accusamus inventore, voluptates sa
+       epe dolores similique necessitatibus quis maxime, nisi enim at est quos sapiente omnis? Corrupti possimus, dict
+       a dolor laborum deleniti ut nemo, sit cum mollitia rem,
+     corporis neque totam repudiandae cupiditate dignissimos laudantium adipisci consequatur incisunt.</p>
+  </div>
+  
+
+</body>
+</html>

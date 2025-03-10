@@ -1,0 +1,93 @@
+[
+    {
+      "name": "Era Flanel",
+      "price": "Rp. 399.000",
+      "image": "assets/eraFlanel.webp"
+    },
+    {
+      "name": "Item 2",
+      "price": "Rp. 200.000",
+      "image": "assets/image2.webp"
+    },
+    {
+      "name": "Item 3",
+      "price": "Rp. 300.000",
+      "image": "assets/image3.webp"
+    },
+    {
+      "name": "Item 4",
+      "price": "Rp. 400.000",
+      "image": "assets/image4.webp"
+    },
+    {
+      "name": "Item 5",
+      "price": "Rp. 500.000",
+      "image": "assets/image5.webp"
+    },
+    {
+      "name": "Item 6",
+      "price": "Rp. 600.000",
+      "image": "assets/image6.webp"
+    },
+    {
+      "name": "Item 7",
+      "price": "Rp. 700.000",
+      "image": "assets/image7.webp"
+    },
+    {
+      "name": "Item 8",
+      "price": "Rp. 800.000",
+      "image": "assets/image8.webp"
+    },
+    {
+      "name": "Item 9",
+      "price": "Rp. 900.000",
+      "image": "assets/image9.webp"
+    },
+    {
+      "name": "Item 10",
+      "price": "Rp. 1.000.000",
+      "image": "assets/image10.webp"
+    },
+    {
+      "name": "Item 11",
+      "price": "Rp. 110.000",
+      "image": "assets/image11.webp"
+    },
+    {
+      "name": "Item 12",
+      "price": "Rp. 120.000",
+      "image": "assets/image12.webp"
+    },
+    {
+      "name": "Item 13",
+      "price": "Rp. 130.000",
+      "image": "assets/image13.webp"
+    },
+    {
+      "name": "Item 14",
+      "price": "Rp. 140.000",
+      "image": "assets/image14.webp"
+    },
+    {
+      "name": "Item 15",
+      "price": "Rp. 198.000",
+      "image": "assets/CropJacket.webp"
+    },
+    {
+      "name": "Item 16",
+      "price": "Rp. 299.000",
+      "image": "assets/CropJacket.webp"
+    },
+    {
+      "name": "Item 17",
+      "price": "Rp. 250.000",
+      "image": "assets/CropJacket.webp"
+    },
+    {
+      "name": "Item 18",
+      "price": "Rp. 150.000",
+      "image": "assets/CropJacket.webp"
+    }
+  ]
+  

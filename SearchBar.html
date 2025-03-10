@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bashion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/webp" href="assets/favicon_io/favicon-32x32.webp">
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const burger = document.getElementById("burger");
+  const menu = document.getElementById("menu");
+  const closeMenu = document.getElementById("closeMenu");
+
+  // Membuka menu
+  burger.addEventListener("click", () => {
+    console.log("Burger clicked");
+    menu.style.display = "block";
+  });
+
+  // Menutup menu
+  closeMenu.addEventListener("click", () => {
+    console.log("Close clicked");
+    menu.style.display = "none";
+  });
+});
+</script>
+
+</head>
+<body class="bg-orange-600 flex flex-col items-center justify-center min-h-screen p-4 ">
+
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-800 text-white  px-4 sm:px-8 py-2 sm:py-3 w-screen h-auto flex justify-between bg-black bg-opacity-0 ">
+        <a href="#ad-background" class=" text-2xl sm:text-5xl drop-shadow-[0_0_10px_rgba(255,127,5,0.8)] text-pink-300 font-bold">Bashion.</a>
+      
+       <!-- Search and Cart Icons -->
+       <div class="flex items-center justify-center gap-6 sm:gap-10 absolute left-1/2 transform -translate-x-1/2">
+       
+        <a href="shop.html" class="text-white mt-1 hover:text-pink-500 transition">
+          <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+          <svg enable-background="new 0 0 32 32"  id="Layer_1" version="1.1" viewBox="0 0 32 32" class="h-6 w-6 sm:h-8 sm:w-8" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M31.4,11.2l-3-3.998c-0.117-0.157-0.256-0.293-0.4-0.423V2c0-1.104-0.896-2-2-2H6  C4.895,0,4,0.896,4,2v4.78C3.856,6.909,3.717,7.044,3.6,7.2l-2.999,3.999C0.213,11.715,0,12.354,0,13v1c0,1.654,1.346,3,3,3h0v13  c0,1.104,0.896,2,2,2h22c1.104,0,2-0.896,2-2V17l0,0c1.654,0,3-1.346,3-3v-1C32,12.354,31.787,11.715,31.4,11.2z M26,2v4H6h0V2H26z   M10.193,15H6.004l4-7h2.189L10.193,15z M13.234,8H15.5v7h-4.266L13.234,8z M16.5,8h2.266l2,7H16.5V8z M19.805,8h2.189l4,7h-4.189  L19.805,8z M2,14v-1c0-0.217,0.07-0.427,0.2-0.6l3-4C5.389,8.148,5.685,8,6,8h2.852l-4,7H3C2.448,15,2,14.553,2,14z M20,30h-7.5V20  H20V30z M27,30h-6V20c0-0.553-0.449-1-1-1h-7.5c-0.552,0-1,0.447-1,1v10H5V17h22V30z M30,14c0,0.553-0.447,1-1,1h-1.854l-4-7H26l0,0 
+             c0.314,0,0.611,0.148,0.799,0.4l3,4C29.93,12.573,30,12.783,30,13V14z" fill=" pink" id="shop_1_"/></svg>
+        </a>
+      </div>
+    
+        <!-- Navigasi untuk layar besar -->
+        <nav class="hidden text-2xl sm:flex gap-4 justify-center ">
+          <a href="index.html#ad-background" class="hover:text-pink-500 transition">HOME</a>
+          <a href="#" class="separator text-pink-500"> / </a>
+          <a href="index.html#who-we-are" class="hover:text-pink-500 transition">WHO WE ARE</a>
+          <a href="#" class="separator text-pink-500"> / </a>
+          <a href="shop.html#newThisWeek" class="hover:text-pink-500 transition">NEW</a>
+          <a href="#" class="separator text-pink-500"> / </a>
+          <a href="index.html#bashion-AI" class="hover:text-pink-500 transition">BASHION AI</a>
+        </nav>
+        
+       
+        <!-- Tombol Burger--> 
+        <button id="burger" class=" sm:hidden">
+          <span class="block w-8 h-1 bg-pink-300 mb-1 transition"></span>
+          <span class="block w-8 h-1 bg-pink-300 mb-1 transition"></span>
+          <span class="block w-8 h-1 bg-pink-400 transition"></span>
+        </button>
+      
+    <!-- Menu Mobile -->
+    <div
+      id="menu"
+      class="hidden fixed inset-0 bg-black bg-opacity-80 grid grid-rows-[ 1fr_auto] items-center justify-between p-6 z-50">
+      <!-- Link Menu -->
+      <div class="flex flex-col items-center gap-6">
+        <a href="index.html#ad-background" class="text-lg text-white hover:underline">HOME</a>
+        <a href="index.html#who-we-are" class="text-lg text-white hover:underline">WHO WE ARE</a>
+        <a href="shop.html#newThisWeek" class="text-lg text-white hover:underline">NEW</a>
+        <a href="index.html#bashion-AI" class="text-lg text-white hover:underline">BASHION AI</a>
+      </div>
+    
+      <!-- Tombol Close -->
+      <button id="closeMenu" class="fixed relative flex flex-col items-center justify-center w-12 h-12 mt-4">
+        <span class="absolute w-12 h-1 bg-white rotate-45 transform origin-center"></span>
+        <span class="absolute w-12 h-1 bg-white -rotate-45 transform origin-center"></span>
+      </button>
+    </div>
+    
+    
+      </header>
+
+  <h1 class="text-4xl sm:text-8xl font-bold pt-10 text-white mb-8">Somewhere here...</h1>
+
+  <!-- Search Input -->
+  <div class="relative w-full max-w-md">
+    <input
+      id="searchInput"
+      type="text"
+      placeholder="Search items..."
+      class="w-full px-4 py-3 pl-10 border border-orange-400 rounded-full text-gray-700 focus:outline-none focus:ring-2 focus:ring-orange-400"
+      oninput="filterResults()"
+    />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      class="absolute top-1/2 left-3 w-5 h-5 text-orange-400 transform -translate-y-1/2"
+    >
+      <path d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-11h2v5h-2V7zm0 6h2v2h-2v-2z" />
+    </svg>
+  </div>
+
+  <!-- Search Results -->
+  <div id="results" class=" grid grid-cols-2 sm:grid-cols-6 mt-6 wfull space-x-4 space-y-4 ">
+    
+    <div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+        <a href="shopPreview.html" class="item-link" data-name="Knit Jacket" data-image="assets/eraFlanel.webp">
+          <img src="assets/eraFlanel.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+        </a>
+        <h3 class="text-lg font-bold mt-4">Era Flanel</h3>
+      </div>
+
+    <!-- Item 2 -->
+    <div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+      <a href="shopPreview.html" class="item-link" data-name="Knit Jacket" data-image="assets/man4.webp">
+        <img src="assets/man4.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+      </a>
+      <h3 class="text-lg font-bold mt-4">Knit Jacket</h3>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+      <a href="shopPreview.html" class="item-link" data-name="Blue Flanel" data-image="assets/woman2.webp">
+        <img src="assets/woman2.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+      </a>
+      <h3 class="text-lg font-bold mt-4">Blue Flanel</h3>
+    </div>
+  
+
+  <div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Grey Long Pants" data-price="Rp. 329.000" data-image="assets/man1.webp">
+        <img src="assets/man1.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Grey Long Pants</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Maten Shirt" data-price="Rp. 550.000" data-image="assets/woman7.webp">
+        <img src="assets/woman7.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Maten Shirt</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Woman Flower Pants" data-price="Rp. 3.199.000" data-image="assets/woman9.webp">
+        <img src="assets/woman9.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Woman Flower Pants</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Luck Dress" data-price="Rp. 1.209.000" data-image="assets/woman3.webp">
+        <img src="assets/woman3.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Luck Dress</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Grey Long Pants" data-price="Rp. 329.000" data-image="assets/man5.webp">
+        <img src="assets/man5.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Man Rusher Edition</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Maten Shirt" data-price="Rp. 550.000" data-image="assets/woman4.webp">
+        <img src="assets/woman4.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Luxury Diamond Dress</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Woman Flower Pants" data-price="Rp. 3.199.000" data-image="assets/woman11.webp">
+        <img src="assets/man11.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Man Socks</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Luck Dress" data-price="Rp. 1.209.000" data-image="assets/man6.webp">
+        <img src="assets/man6.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Pablo Outer</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Grey Long Pants" data-price="Rp. 329.000" data-image="assets/woman1.webp">
+        <img src="assets/woman1.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Striped T-shirt</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Maten Shirt" data-price="Rp. 550.000" data-image="assets/man7.webp">
+        <img src="assets/man7.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Lolo Cargo Set</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Woman Flower Pants" data-price="Rp. 3.199.000" data-image="assets/woman11.webp">
+        <img src="assets/woman11.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Woman Socks</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Luck Dress" data-price="Rp. 1.209.000" data-image="assets/woman12.webp">
+        <img src="assets/man12.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Bashion Jacket</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Grey Long Pants" data-price="Rp. 329.000" data-image="assets/man12.webp">
+        <img src="assets/woman12.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Green Jeans Outer</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Maten Shirt" data-price="Rp. 550.000" data-image="assets/woman13.webp">
+        <img src="assets/man13.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Bashion X uniQlu</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Woman Flower Pants" data-price="Rp. 3.199.000" data-image="assets/CropJacket.webp">
+        <img src="assets/CropJacket.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Leather Crop Jacket</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Luck Dress" data-price="Rp. 1.209.000" data-image="assets/fullSuit.webp">
+        <img src="assets/fullSuit.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Bashion Outlaw</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Grey Long Pants" data-price="Rp. 329.000" data-image="assets/cargo.webp">
+        <img src="assets/cargo.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Green Cargo</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Maten Shirt" data-price="Rp. 550.000" data-image="assets/Japanese.webp">
+        <img src="assets/Japanese.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Bashion Kimono</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Woman Flower Pants" data-price="Rp. 3.199.000" data-image="assets/jeansDress.webp">
+        <img src="assets/jeansDress.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Jeans Dress</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Luck Dress" data-price="Rp. 1.209.000" data-image="assets/raincoatJacket.webp">
+        <img src="assets/raincoatJacket.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Raincoat Whith Style</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Grey Long Pants" data-price="Rp. 329.000" data-image="assets/rainbowNike.webp">
+        <img src="assets/rainbowNike.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Rainbow Shoes</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Maten Shirt" data-price="Rp. 550.000" data-image="assets/womenLeatherShoes.webp">
+        <img src="assets/womenLeatherShoes.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Woman Leather Shoes</h3>
+</div>
+
+
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Woman Flower Pants" data-price="Rp. 3.199.000" data-image="assets/woman5.webp">
+        <img src="assets/woman5.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Woman Short</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Luck Dress" data-price="Rp. 1.209.000" data-image="assets/man short.webp">
+        <img src="assets/man short.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Man Short</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Maten Shirt" data-price="Rp. 550.000" data-image="assets/BaggyJeans.webp">
+        <img src="assets/BaggyJeans.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Baggy Jeans</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Woman Flower Pants" data-price="Rp. 3.199.000" data-image="assets/unisexSneakers.webp">
+        <img src="assets/unisexSneakers.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Bashion Sneakers</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Luck Dress" data-price="Rp. 1.209.000" data-image="assets/woman6.webp">
+        <img src="assets/woman6.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Woman Short</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Luck Dress" data-price="Rp. 1.209.000" data-image="assets/woman8.webp">
+        <img src="assets/woman8.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Woman Cargo</h3>
+</div>
+
+<div class="bg-white rounded-lg shadow-md p-4 hover:scale-150 transition-transform duration-300 ease-in-out">
+    <a href="shopPreview.html" class="item-link" data-name="Luck Dress" data-price="Rp. 1.209.000" data-image="assets/woman10.webp">
+        <img src="assets/woman10.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+    </a>
+    <h3 class="text-lg font-bold mt-4">Woman Lolo Set</h3>
+</div>
+
+
+
+</div>
+
+
+
+  <!-- JavaScript -->
+  <script>
+    // Filter Results Function
+    function filterResults() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const results = document.getElementById('results').getElementsByTagName('div');
+
+      for (let i = 0; i < results.length; i++) {
+        const item = results[i];
+        const text = item.textContent || item.innerText;
+
+        if (text.toLowerCase().includes(input)) {
+          item.classList.remove("hidden");
+        } else {
+          item.classList.add("hidden");
+        }
+      }
+    }
+
+    // Redirect to Shop Function
+    function redirectToShop(name, price, image) {
+      const params = new URLSearchParams({
+        name: name,
+        price: price,
+        image: image
+      });
+
+      window.location.href = `shopPreview.html?${params.toString()}`;
+    }
+  </script>
+</body>
+</html>

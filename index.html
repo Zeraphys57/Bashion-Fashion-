@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bashion Fashion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="icon" type="image/webp" href="assets/favicon_io/favicon-32x32.webp">
+
+   
+</head>
+
+
+<body class="bg-orange-400 font-sans overflow-x-hidden scroll-behavior:smooth scrollbar-hide w-full">
+    
+  
+  <header class="fixed top-0 left-0 right-0 z-50 bg-gray-800 text-white  px-4 sm:px-8 py-2 sm:py-3 w-screen h-auto flex justify-between bg-black bg-opacity-0 ">
+    <a href="#ad-menu" class=" text-2xl sm:text-5xl drop-shadow-[0_0_10px_rgba(255,127,5,0.8)] text-pink-500 font-bold">Bashion.</a>
+  
+   <!-- Search and Cart Icons -->
+   <div class="flex items-center justify-center gap-6 sm:gap-10 absolute left-1/2 transform -translate-x-1/2">
+    <a href="SearchBar.html" class="text-white mt-1 hover:text-pink-500 transition">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 sm:h-9 sm:w-9" viewBox="0 0 50 50"
+      style="fill:#ffffff;">
+      <path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"></path>
+      </svg>
+    </a>
+    <a href="shop.html" class="text-white mt-1 hover:text-pink-500 transition">
+      <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+      <svg enable-background="new 0 0 32 32"  id="Layer_1" version="1.1" viewBox="0 0 32 32" class="h-6 w-6 sm:h-8 sm:w-8" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M31.4,11.2l-3-3.998c-0.117-0.157-0.256-0.293-0.4-0.423V2c0-1.104-0.896-2-2-2H6  C4.895,0,4,0.896,4,2v4.78C3.856,6.909,3.717,7.044,3.6,7.2l-2.999,3.999C0.213,11.715,0,12.354,0,13v1c0,1.654,1.346,3,3,3h0v13  c0,1.104,0.896,2,2,2h22c1.104,0,2-0.896,2-2V17l0,0c1.654,0,3-1.346,3-3v-1C32,12.354,31.787,11.715,31.4,11.2z M26,2v4H6h0V2H26z   M10.193,15H6.004l4-7h2.189L10.193,15z M13.234,8H15.5v7h-4.266L13.234,8z M16.5,8h2.266l2,7H16.5V8z M19.805,8h2.189l4,7h-4.189  L19.805,8z M2,14v-1c0-0.217,0.07-0.427,0.2-0.6l3-4C5.389,8.148,5.685,8,6,8h2.852l-4,7H3C2.448,15,2,14.553,2,14z M20,30h-7.5V20  H20V30z M27,30h-6V20c0-0.553-0.449-1-1-1h-7.5c-0.552,0-1,0.447-1,1v10H5V17h22V30z M30,14c0,0.553-0.447,1-1,1h-1.854l-4-7H26l0,0 
+         c0.314,0,0.611,0.148,0.799,0.4l3,4C29.93,12.573,30,12.783,30,13V14z" fill="#ffffff" id="shop_1_"/></svg>
+    </a>
+  </div>
+
+    <!-- Navigasi untuk layar besar -->
+    <nav class="hidden text-2xl sm:flex gap-4 justify-center ">
+      <a href="#ad-background" class="hover:text-pink-500 transition">HOME</a>
+      <a href="#" class="separator text-pink-500"> / </a>
+      <a href="#who-we-are" class="hover:text-pink-500 transition">WHO WE ARE</a>
+      <a href="#" class="separator text-pink-500"> / </a>
+      <a href="#bestSale" class="hover:text-pink-500 transition">HOT</a>
+      <a href="#" class="separator text-pink-500"> / </a>
+      <a href="#bashion-AI" class="hover:text-pink-500 transition">BASHION AI</a>
+    </nav>
+    
+   
+    <!-- Tombol Burger--> 
+    <button id="burger" class=" sm:hidden">
+      <span class="block w-8 h-1 bg-white mb-1 transition"></span>
+      <span class="block w-8 h-1 bg-white mb-1 transition"></span>
+      <span class="block w-8 h-1 bg-white transition"></span>
+    </button>
+  
+<!-- Menu Mobile -->
+<div
+  id="menu"
+  class="hidden fixed inset-0 bg-black bg-opacity-80 grid grid-rows-[ 1fr_auto] items-center justify-between p-6 z-50">
+  <!-- Link Menu -->
+  <div class="flex flex-col items-center gap-6">
+    <a href="#ad-background" class="text-lg text-white hover:underline">HOME</a>
+    <a href="#who-we-are" class="text-lg text-white hover:underline">WHO WE ARE</a>
+    <a href="#bestSale" class="text-lg text-white hover:underline">NEW</a>
+    <a href="#bashion-AI" class="text-lg text-white hover:underline">BASHION AI</a>
+  </div>
+
+  <!-- Tombol Close -->
+  <button id="closeMenu" class="fixed relative flex flex-col items-center justify-center w-12 h-12 mt-4">
+    <span class="absolute w-12 h-1 bg-white rotate-45 transform origin-center"></span>
+    <span class="absolute w-12 h-1 bg-white -rotate-45 transform origin-center"></span>
+  </button>
+</div>
+
+
+  </header>
+  
+  <!--hidden fixed inset-0 bg-black bg-opacity-50  grid-cols-5 items-center justify-center gap-6 z-50-->
+
+
+  <section>
+    <div id="ad-background" class="ad-background hidden md:block object-contain w-screen max-w-full sm:mt-10 md:mt-20 lg:mt-0 ">
+      <img src="assets/Army.webp" alt="ads">
+    </div>
+  </section>
+
+  <section>
+    <div id="ad-background" class="ad-background block md:hidden object-contain w-screen max-w-full sm:mt-10 md:mt-20 lg:mt-0 ">
+      <img src="assets/Army Vertical.webp" alt="ads">
+    </div>
+  </section>
+  
+  
+
+    
+          <!-- Main Content -->
+      <div id="who-we-are" class="text-white w-screen max-w-full">
+        <div class="container max-w-screen grid gap-8">
+            <!-- Featured Section -->
+            <div>
+                <div class="relative flex justify-center ">
+                    <!-- Wrapper -->
+                    <div class="relative w-screen max-w-full">
+                        <!-- Gambar -->
+                        <img src="assets/fikri-syahfana-ERMAtn9IYp4-unsplashBatik.webp" alt="Product Image" class="hidden sm:block w-screen max-w-full shadow-lg">
+                        <img src="assets/fikri-syahfana-w-vertical-j96_D5VhY-unsplash.webp" id="gambar2" alt="Product Image" class=" w-screen max-w-full shadow-lg">
+                        <!-- Teks di tengah gambar -->
+                        <div class="absolute inset-0 flex items-center sm:mb-20 justify-center">
+                            <span class="text-3xl  md:text-[6rem] xl:text-[8rem] hover:drop-shadow-[0_0_10px_rgba(255,127,5,0.8)] hover:text-pink-400 hover:scale-105 transform duration-700 ease-out drop-shadow-[0_0_10px_rgba(255,127,5,0.8)]
+                            font-extrabold text-center sm:text-[clamp(4rem, 8vw, 6rem)] [perspective:500px] [transform:scale(1.2)]">WE ARE BASHION</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+        <!-- <div class=" from-gray-100 via-gray-200 to gray-300 text white py-4 my-2 w-full">
+          <div class="container max-w-full grid gap-8">
+            <div class="w-auto p-6 rounded-lg">
+              <h2 class="text-white text-3xl font-bold text-center mb-4">featured</h2>
+              <div class="flex justify-center">
+                
+              </div>
+
+
+            </div>
+          </div>
+        </div> -->
+
+        <section>
+          <!--Pinned Text-->
+          <div id="text-section" class="relative w-screen h-screen bg-black bg-opacity-70 text-white">
+            <div id="folded-text" class="absolute inset-0 right-0 left-0 w-screen top-1/2 -translate-y-1/2 text-center">
+              <h1  class="text-4xl lg:text-6xl font-bold">When Innovation Meet Art</h1>
+              <p class="mt-4 text-lg lg:text-xl">Discover the latest innovation and styles.</p>
+            </div>
+          </div>
+        
+
+          <section id="text-content" class="relative text-white text-lg leading-relaxe">
+
+            
+            
+
+            <div id="stitch-container" class="flex items-center h-screen bg-black bg-opacity-70 overflow-hidden">
+              <svg
+                id="stitch"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 700 200"
+                width="2000"
+                height="300">
+                <!-- Teks -->
+                <text
+                  id="bashion-text"
+                  x="50"
+                  y="100"
+                  font-size="120"
+                  font-family="monospace"
+                  fill="none"
+                  stroke="pink"
+                  stroke-width="2"
+                  stroke-dasharray="0, 500">
+                  B A S H I O N.
+                </text>
+              </svg>
+
+              
+            </div>
+            
+            
+          
+        
+          <!-- Teks Panjang -->
+          <div class="max-w-5xl sm:w-3xl max-w-full bg-black bg-opacity-70">
+            <p class="text-center justify-center bg-opacity-70 text-2xl sm:text-4xl mx-10 sm:mx-10 lg:mx-60">
+              Bashion didirikan dengan visi untuk menginspirasi perubahan positif dalam dunia
+              fashion dengan membawa nilai keberlanjutan ke garis depan gaya hidup modern.
+              Kami percaya bahwa fashion tidak hanya tentang ekspresi diri, tetapi juga
+              tentang tanggung jawab terhadap lingkungan dan masyarakat.
+
+              Berangkat dari keprihatinan atas dampak industri fashion terhadap bumi,
+              kami menghadirkan solusi yang mengutamakan keseimbangan antara estetika,
+              kualitas, dan kepedulian lingkungan. Dengan misi untuk memberikan pilihan
+              fashion yang ramah lingkungan dan berkelanjutan, kami ingin membuktikan
+              bahwa gaya dan keberlanjutan bisa berjalan beriringan tanpa kompromi.
+              <br>
+              <br>
+              Apa yang membuat Bashion unik?
+              <br>
+              <br>
+              Kami menggunakan bahan-bahan daur ulang, organik, atau berkelanjutan untuk menciptakan produk yang lebih hijau.
+              Selain itu setiap produk dirancang dengan detail dan keindahan, memastikan Anda tetap tampil memukau tanpa meninggalkan jejak karbon yang besar.
+              Bashion juga memiliki ekosistem komunitas yang hidup, kami bekerja sama dengan pengrajin lokal dan komunitas untuk menciptakan dampak sosial yang positif di setiap langkah.<br>
+              <br>
+              Kami percaya bahwa fashion tidak hanya sekadar tentang penampilan, 
+              tetapi juga berkaitan erat dengan tanggung jawab kita terhadap lingkungan.
+              Dalam era di mana kesadaran akan isu-isu lingkungan semakin meningkat, 
+              kami berkomitmen untuk menghadirkan inovasi dan kreativitas dalam setiap
+              desain yang kami buat. Di Bashion, kami merancang pakaian yang tidak hanya
+              memenuhi standar trendi, tetapi juga memperhatikan dampak terhadap lingkungan.<br>
+              <img src="assets/factory.webp" alt="" class="my-14 rounded-full sm:hover:scale-105 transform duration-700 ease-in-out">
+              <br>
+              Setiap koleksi yang kami luncurkan dirancang dengan seksama, mengutamakan
+              kualitas dan keberlanjutan sebagai prinsip utama. Kami bekerja sama dengan
+              pemasok yang memiliki visi dan komitmen yang sama dalam menjaga keberlangsungan
+              bumi kita. Kami percaya bahwa kolaborasi ini sangat penting untuk menciptakan
+              produk yang bertanggung jawab secara sosial dan lingkungan. Selain itu, kami
+              juga berupaya untuk memberdayakan komunitas lokal di sekitar kami. Melalui 
+              program pelatihan dan penciptaan peluang kerja, kami ingin memastikan bahwa
+              proses produksi tidak hanya menghasilkan pakaian berkualitas, tetapi juga
+              memberikan manfaat bagi masyarakat.<br>
+              <img src="assets/sewing.webp" alt="" class="my-16 rounded-3xl sm:hover:scale-105 transform duration-700 ease-in-out">
+              <br>
+              Dengan Bashion, kami berambisi untuk menginspirasi masyarakat agar lebih peduli
+              terhadap lingkungan dan menjadikan pilihan fashion yang berkelanjutan sebagai
+              bagian dari gaya hidup mereka. Kami percaya bahwa setiap individu memiliki peran
+              dalam menciptakan perubahan positif. Melalui pemilihan produk yang ramah 
+              lingkungan, kita semua dapat berkontribusi pada masa depan yang lebih baik dan
+              lebih hijau. Terima kasih telah mendukung perjalanan kami menuju perubahan yang
+              positif dan berkelanjutan! Mari bersama-sama kita wujudkan dunia yang lebih baik
+              melalui pilihan fashion yang bijak.<br>
+             
+              <br>
+            </p>
+            <div class="sm:h-10 bg-opacity-70"></div>
+            <p class="flex justify-center items-center text-center text-extrabold mt-20 text-[calc(2rem+5vw)] 
+            [perspective:500px] sm:text-8xl"> YOUR<br><br><br>ECO<br><br><br>CHOICES<br><br><br><br></p>
+
+            
+          </div>
+          <div class="object-contain h-full max-w-full">
+            <img src="assets/paint.jpg" alt="longpic">
+          </div>
+          
+        </section>
+         
+       
+      
+        
+        
+
+          <!--<div class="relative">
+            <-- Elemen utama --
+            <div class=" h-screen flex justify-center items-center">
+              <div id="animationArea" class="hidden lg:block absolute right-30">
+                <div id="animatedText" class="text-white text-4xl font-bold">Trade Smartly</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </section>-->
+
+
+ 
+
+
+
+
+<!--backimage with words-->
+  <section id="big-store" class="flex justify-center items-center bg-black-500 pb-10 ">
+      <div class="relative opacity-85 bg-cover bg-center w-full  max-w-8xl h-screen" style="background-image: url('assets/halfFaceModel.webp');">
+          <div class="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center ">
+              <p class="text-white text-xl sm:hover:scale-105 md:hover:scale-105 transform duration-700 ease-out text-2xl sm:text-4xl text-center p-6 ">
+                Proses produksi pakaian membutuhkan sumber daya yang sangat besar,
+                seperti air, energi,<br> dan bahan mentah, yang memberikan tekanan serius
+                terhadap lingkungan.<br> Namun, Anda dapat menjadi bagian dari perubahan!
+                Dengan memanfaatkan fitur<br> trade pakaian dari Bashion, Anda tidak hanya
+                membantu mengurangi limbah fashion, tetapi<br> juga berkontribusi langsung
+                pada keberlanjutan planet kita.<br> Mari bergaya dengan cara yang lebih
+                cerdas dan ramah lingkungan<br> Ayo tukarkan pakaian Anda sekarang dan jadilah<br>
+                bagian dari gerakan "Green Stylish"! 🌿✨</p>
+          </div>
+      </div>
+  </section>
+  
+  <section>
+    <div class="w-full flex">
+      <!--Gambar tepi 1-->
+      <div class="flex items-start max-h-20 space-x-4">
+        <img src="assets/BaggyJeans.webp" alt="definisionPictureTrade" class="lg:w-[400px] lg:h-[450px] w-[250px] h-[400px]   
+         max-w-full opacity-100 ml-20 mt-5 w-80 h-90 rounded">
+  </section>  
+
+  <!-- Hero Section -->
+</section>  
+  <div class=" bg-gradient-to-b from-orange-300 via-orange-400 to-orange-500 flex sm:justify-center sm:items-center justify-end  sm:bottom-20 sm:mb-6-20">
+    <div class="text-center p-16">
+      <h1 class="text-6xl font-bold text-white mb-4">UNIQUE DESIGN FOR UNIQUE HUMAN </h1>
+      <p class="text-white">Find the best deals on your favorite items!</p>
+    </div>
+  </div>
+ <!--Gambar tepi-->
+</section>  
+
+
+
+
+
+<!-- Trade section -->
+<section>
+
+  <div class=" w-full  bg-gradient-to-b from-orange-300 via-orange-400 to-orange-500 flex flex-col items-center justify-center space-y-20 py-8 my-8 sm:space-y-6 px-4 sm:my-5">
+    <div class="justify-center text-center text-bold text-white font-bold text-4xl  my-6 py-4">
+      <h1>Trade Your Unused Clothes</h1>
+      
+  </div>
+    <!-- Their Offer -->
+    <div class="w-full max-w-4xl bg-white shadow-lg rounded-lg p-6 space-y-4">
+      <h2 class="text-xl font-semibold text-orange-600">Best Offer From Bashion</h2>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="h-[200px] w-full sm:h-[300px] sm:w-[250px] lg:h-[400px] lg:w-[290px] border border-gray-300 rounded-lg p-4 text-center">
+          <img src="assets/eraFlanel.webp" alt="Their Item" class="h-full object-cover mx-auto">
+          <p class="mt-2 text-gray-700"></p>
+        </div>
+        <div class="h-[200px] w-full sm:h-[300px] sm:w-[250px] lg:h-[400px] lg:w-[290px] border border-gray-300 rounded-lg p-4 text-center">
+          <img src="assets/Japanese.webp" alt="Their Item" class="h-full object-cover mx-auto">
+          <p class="mt-2 text-gray-700"></p>
+        </div>
+        <div class="h-[200px] w-full sm:h-[300px] sm:w-[250px] lg:h-[400px] lg:w-[290px] border border-gray-300 rounded-lg p-4 text-center">
+          <img src="assets/BaggyJeans.webp" alt="Their Item" class="h-full object-cover mx-auto">
+          <p class="mt-2 text-gray-700"></p>
+        </div>
+      </div>
+      <button class="bg-gradient-to-r from-orange-500 to-yellow-500 text-white font-bold py-2 px-6 rounded-lg shadow-md hover:shadow-lg hover:scale-105 transform transition duration-300 flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm-1-11a1 1 0 012 0v2h2a1 1 0 110 2h-2v2a1 1 0 11-2 0v-2H7a1 1 0 010-2h2V7z" clip-rule="evenodd" />
+        </svg>
+        Request Trade
+      </button>
+    </div>
+
+  
+  
+    <!-- Card Trade -->
+    <div class="bg-white shadow-2xl rounded-3xl p-6 w-full max-w-md">
+      <h2 class="text-2xl font-bold text-center text-orange-600 mb-4">Trade Your Clothes</h2>
+      <p class="text-gray-600 text-center mb-6">
+        Exchange your old clothes for something new and trendy!
+      </p>
+      <div class="flex justify-center items-center space-x-6 mb-6">
+        <!-- Pakaian pertama -->
+        <div class="relative group w-28 h-28 rounded-xl overflow-hidden shadow-md border">
+          <img src="assets/BaggyJeans.webp" alt="Baggy Jeans" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-white font-semibold">Your Item</span>
+          </div>
+        </div>
+        <!-- Icon Trade -->
+        <div class="text-orange-500 text-4xl">
+          ↔
+        </div>
+        <!-- Pakaian kedua -->
+        <div class="relative group w-28 h-28 rounded-xl overflow-hidden shadow-md border">
+          <img src="assets/unisexSneakers.webp" alt="Second Item" class="w-full h-full object-cover object-contain max-w-full">
+          <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-white font-semibold">Trade Item</span>
+          </div>
+        </div>
+      </div>
+      <button class="w-full py-3 bg-orange-500 text-white rounded-xl text-lg font-semibold shadow-lg hover:bg-orange-600 transition-colors duration-300">
+        Confirm Trade
+      </button>
+    </div>
+  
+  
+
+     <!-- Your Offer -->
+    <div class="w-full max-w-4xl bg-white shadow-lg rounded-lg p-6 space-y-4">
+      <h2 class="text-xl font-semibold text-orange-600">Show Your Offer To Bashion</h2>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="h-[200px] w-full sm:h-[300px] sm:w-[250px] lg:h-[400px] lg:w-[290px] border border-gray-300 rounded-lg p-4 text-center">
+          <img src="assets/CropJacket.webp" alt="Your Item" class="h-full object-cover mx-auto">
+          <p class="mt-2 text-gray-700"></p>
+        </div>
+        <div class="h-[200px] w-full sm:h-[300px] sm:w-[250px] lg:h-[400px] lg:w-[290px] border border-gray-300 rounded-lg p-4 text-center">
+          <img src="assets/stylishJacket.webp" alt="Your Item" class="h-full object-cover mx-auto">
+          <p class="mt-2 text-gray-700"></p>
+        </div>
+        <div class="h-[200px] w-full sm:h-[300px] sm:w-[250px] lg:h-[400px] lg:w-[290px] border border-gray-300 rounded-lg p-4 text-center">
+          <img src="assets/unisexSneakers.webp" alt="Your Item" class="h-full object-cover mx-auto">
+          <p class="mt-2 text-gray-700"></p>
+        </div>
+      </div>
+      <button class="border-2 border-dashed border-orange-500 text-orange-500 font-semibold py-2 px-4 rounded w-full hover:bg-orange-100">
+        + Add Your Item
+      </button>
+    </div>
+
+  </div>
+  
+  <div class="relative">
+    
+    <div>
+      <!-- Elemen Utama -->
+      <div class="bg-gray-900  sm:h-80 text-justify flex justify-center items-center">
+        
+        <p class="text-white text-xl mx-10 my-10">
+          Bashion Trade Rules:<br>
+          1. Kondisi Barang
+          Barang yang ditawarkan harus dalam kondisi layak pakai, tidak rusak parah, dan sesuai deskripsi yang diberikan.<br>
+          Foto barang harus asli, jelas, dan tidak boleh menggunakan gambar yang diambil dari internet tanpa izin.<br>
+          <br>
+          2. Keamanan dan Transparansi
+          Pengguna wajib menyertakan informasi detail barang, seperti merek, ukuran, dan catatan khusus.<br>
+          Transaksi hanya boleh dilakukan melalui sistem aplikasi untuk memastikan keamanan dan transparansi.<br>
+          <br>
+          3. Kebijakan Pengembalian Barang yang sudah dipertukarkan tidak dapat dikembalikan setelah 30 hari, kecuali ada persetujuan antara kedua belah pihak.<br>
+          Jika ditemukan pelanggaran atau penipuan, pengguna dapat melaporkannya ke admin aplikasi dengan menyertakan bukti.
+        </p>
+        <div id="animationArea" class="hidden lg:flex flex-col items-end absolute inset-0 right-10  space-y-5">
+          <!-- Teks Animasi -->
+          <div id="animatedText1" class="text-white text-5xl mt-10 font-extrabold">Trade Smart</div>
+          <div id="animatedText2" class="text-white text-3xl font-light">Be Sustainable</div>
+          <!-- Ikon Melayang -->
+          <div id="floatingIcons" class="flex space-x-4 mt-5">
+            <div class="bg-white p-4 rounded-full shadow-lg">
+              <img src="assets/good-feedback.webp" alt="T-shirt Icon" class="h-8 w-8">
+            </div>
+            <div class="bg-white p-4 rounded-full shadow-lg">
+              <img src="assets/shield.webp" alt="Shoes Icon" class="h-8 w-8">
+            </div>
+            <div class="bg-white p-4 rounded-full shadow-lg">
+              <img src="assets/60-days.webp" alt="Bag Icon" class="h-8 w-8">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- Layar Oranye-->
+      <div class="bg-gradient-to-br from-orange-500 to-purple-500 bg-blur flex justify-center items-center">
+        <!-- Best Sale Section -->
+      <section id="bestSale" class="bg-gradient-to-br from-orange-500 to-purple-500 mx-auto my-10 w-full ">
+        <h2 class="text-3xl sm:text-6xl text-white font-extrabold text-center mt-10 mb-20">HOT THIS WEEK🔥</h2>
+        <div class="container sm:max-w-full px-4 pb-10 overflow-x-scroll scrollbar-hide">
+          
+          <div class="flex gap-4"> 
+
+            <!-- Tombol Panah kecil Kiri -->
+            <div
+            id="arrow-left"
+            class="lg:hidden bottom-4 right-1 z-50  flex items-center"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </div>
+
+      <!-- Product Cards -->
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4 flex-shrink-0">
+        <img src="assets/raincoatJacket.webp" alt="Product 1" class="w-full h-40 object-cover rounded-md">
+        <h3 class="mt-4 text-lg font-semibold">Baggy Jeans</h3>
+        <p class="text-gray-500 mt-2">Rp. 350.000</p>
+        <button class="mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Add to Cart</button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4 flex-shrink-0">
+        <img src="assets/BaggyJeans.webp" alt="Product 1" class="w-full h-40 object-cover rounded-md">
+        <h3 class="mt-4 text-lg font-semibold">Baggy Jeans</h3>
+        <p class="text-gray-500 mt-2">Rp. 350.000</p>
+        <button class="mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Add to Cart</button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4 flex-shrink-0">
+        <img src="assets/womenShoes.webp" alt="Product 2" class="w-full h-40 object-cover rounded-md">
+        <h3 class="mt-4 text-lg font-semibold">Leather Crop Jacket</h3>
+        <p class="text-gray-500 mt-2">Rp. 899.000</p>
+        <button class="mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Add to Cart</button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4 flex-shrink-0">
+        <img src="assets/stylishJacket.webp" alt="Product 3" class="w-full h-40 object-cover rounded-md">
+        <h3 class="mt-4 text-lg font-semibold">Man Jacket Edition</h3>
+        <p class="text-gray-500 mt-2">Rp. 1.199.000</p>
+        <button class="mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Add to Cart</button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4 flex-shrink-0">
+        <img src="assets/unisexSneakers.webp" alt="Product 4" class="w-full h-40 object-cover rounded-md">
+        <h3 class="mt-4 text-lg font-semibold">Bamboo Sneakers</h3>
+        <p class="text-gray-500 mt-2">Rp. 749.000</p>
+        <button class="mt-4 w-full bg-blue-500 text-white py-2 px-4  rounded hover:bg-blue-600">Add to Cart</button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4 flex-shrink-0">
+        <img src="assets/eraFlanel.webp" alt="Product 5" class="w-full h-40 object-cover rounded-md">
+        <h3 class="mt-4 text-lg font-semibold">Man Flanel</h3>
+        <p class="text-gray-500 mt-2">Rp. 990.900</p>
+        <button class="mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Add to Cart</button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4 flex-shrink-0">
+        <img src="assets/Japanese.webp" alt="Product 5" class="w-full h-40 object-cover rounded-md">
+        <h3 class="mt-4 text-lg font-semibold">Kimono</h3>
+        <p class="text-gray-500 mt-2">Rp. 450.900</p>
+        <button class="mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Add to Cart</button>
+      </div>
+       <!-- Tombol panah keci kanan -->
+       <div
+       id="arrow-right"
+       class="lg:hidden bottom-4 left-1 z-50  flex items-center"
+     >
+       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+       </svg>
+     </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!--Area Animasi--> 
+ <div id="animationWrapper" class="absolute inset-0 flex h-full justify-center mt-20 items-center">
+   <!--Teks Interaktif-->
+   <div id="interactiveText" class="hidden text-white text-10xl lg:text-7xl font-extrabold text-center space-y-4">
+     <div id="line1">Empower Your</div>
+     <div id="line2">Sustainable</div>
+     <div id="line3">Choices</div>
+   </div>
+
+  <!-- Ikon Melayang-->
+   <div id="floatingIcons" class="absolute inset-0 w-full h-full flex items-center justify-center space-x-4 opacity-75">
+     <div class="floatingIcon  p-4 rounded-full shadow-lg absolute">
+       <img src="assets/tshirtIcon.webp" alt="T-shirt Icon" class="h-8 w-8">
+     </div>
+     <div class="floatingIcon  p-4 rounded-full shadow-lg absolute">
+       <img src="assets/trousersIcon.webp" alt="Shoes Icon" class="h-8 w-8">
+     </div>
+     <div class="floatingIcon  p-4 rounded-full shadow-lg absolute">
+       <img src="assets/dressIcon.webp" alt="Bag Icon" class="h-8 w-8">
+     </div>
+     <div class="floatingIcon  p-4 rounded-full shadow-lg absolute">
+      <img src="assets/tshirtIcon.webp" alt="T-shirt Icon" class="h-8 w-8">
+    </div>
+    <div class="floatingIcon  p-4 rounded-full shadow-lg absolute">
+      <img src="assets/trousersIcon.webp" alt="Shoes Icon" class="h-8 w-8">
+    </div>
+    <div class="floatingIcon  p-4 rounded-full shadow-lg absolute">
+      <img src="assets/dressIcon.webp" alt="Bag Icon" class="h-8 w-8">
+    </div>
+    <div class="floatingIcon  p-4 rounded-full shadow-lg absolute">
+      <img src="assets/tshirtIcon.webp" alt="T-shirt Icon" class="h-8 w-8">
+    </div>
+    <div class="floatingIcon  p-4 rounded-full shadow-lg absolute">
+      <img src="assets/trousersIcon.webp" alt="Shoes Icon" class="h-8 w-8">
+    </div>
+    <div class="floatingIcon  p-4 rounded-full shadow-lg absolute">
+      <img src="assets/dressIcon.webp" alt="Bag Icon" class="h-8 w-8">
+    </div>
+   </div>
+ </div>
+</div>
+    </div>
+  </div>
+
+
+  <!-- <div class="relative">
+    <-- Latar --
+    <div class="bg-gradient-to-br from-orange-500 to-purple-500 w-full h-screen flex justify-center items-center overflow-hidden">
+      <-- Area Interaktif --
+      <div id="interactiveWrapper" class="absolute inset-0 mt-20 flex-col items-center justify-center">
+        <-- Teks Animasi --
+        <div id="animatedText" class="text-white text-6xl lg:text-8xl font-extrabold space-y-16 text-center w-full overflow-x-hidden outline">
+          <div id="text1" class="hover-3d">Innovate</div>
+          <div id="text2" class="hover-3d">Sustain</div>
+          <div id="text3" class="hover-3d">Inspire</div>
+        </div>
+  
+        
+      </div>
+    </div>
+  </div> -->
+
+</section>
+
+<section>
+  <div class="relative w-full bg-black text-white ">
+    
+  
+    <!-- Hero Section -->
+    <section id="hero" class="h-screen flex justify-center items-center relative overflow-hidden">
+      <!-- Background Layers -->
+      <div class="absolute inset-0 bg-gradient-to-r from-black via-gray-800 to-black opacity-80"></div>
+      <div id="parallaxBg" class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60" style="background-image: url('assets/rainbowNike.webp');"></div>
+  
+      <!-- Hero Content -->
+      <div class="relative w-full z-10 text-center">
+        <h1 class="text-5xl lg:text-8xl font-extrabold tracking-wide mb-4 animate-text">Own Your Style</h1>
+        <a href="shop.html">
+            <p class="text-xl lg:text-2xl text-gray-300 mb-8">Discover the trendiest fashion pieces that define YOU.</p>
+          <button  class=" px-8 py-4 bg-pink-500 hover:bg-pink-600 transition rounded-full text-white font-semibold shadow-lg">Shop Now</button>
+        </a>
+    </div>
+      
+    </section>
+
+
+
+
+  
+   <!-- Collection Section with Infinite Carousel========================================================================================================================================================================================= -->
+  <section class="py-20 bg-gray-900">
+    <h2 id="collectionTitle" class="text-4xl sm:text-7xl font-extrabold text-white text-center mb-12">Our Collection</h2>
+    <div class="container px-4 max-w-screen-lg">
+      <div id="carousel" class="carousel flex gap-4 scrollbar-hide sm:w-screen sm:max-w-screen  px-4 sm:scrollbar-x-hide overflow-x-hidden ">
+        <div id="carouselItems" class="flex gap-8 w-[calc(100%+1rem)]-lg hidden:overflow-x-sm overflow-hidden carousel flex-shrink-0 ">
+          <!-- Repeatable Items -->
+          <div class="carouselItem w-80 h-96 bg-cover bg-center rounded-lg shadow-lg" style="background-image: url('assets/CropJacket.webp');"></div>
+          <div class="carouselItem w-80 h-96 bg-cover bg-center rounded-lg shadow-lg" style="background-image: url('assets/fullSuit.webp');"></div>
+          <div class="carouselItem w-80 h-96 bg-cover bg-center rounded-lg shadow-lg" style="background-image: url('assets/womenLeatherShoes.webp');"></div>
+          <div class="carouselItem w-80 h-96 bg-cover bg-center rounded-lg shadow-lg" style="background-image: url('assets/Japanese.webp');"></div>
+          <div class="carouselItem w-80 h-96 bg-cover bg-center rounded-lg shadow-lg" style="background-image: url('assets/raincoatJacket.webp');"></div>
+          <div class="carouselItem w-80 h-96 bg-cover bg-center rounded-lg shadow-lg" style="background-image: url('assets/eraFlanel.webp');"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+  
+
+<!-- Chat Box -->
+<section id="bashion-AI" class="flex flex-col justify-center items-center bg-gradient-to-br from-pink-300 via-grey-400 to-orange-900 py-20">
+  <h1 class="text-white text-extrabold pb-5 text-8xl">Bashion AI</h1>
+  <div class="flex flex-col items-center animate-float bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-6 rounded-2xl shadow-lg w-[350px] space-y-4">
+    <!-- Floating AI Icon -->
+    <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-md animate-float">
+      <img src="assets/aiIcon.webp" alt="AI Icon" class="w-16 h-16 rounded-full">
+    </div>
+  
+    <!-- Chat Title -->
+    <h2 class="text-white text-xl font-semibold">AI Chat</h2>
+  
+    <!-- Chat Description -->
+    <p class="text-white text-center px-4">
+      Halo! Aku di sini untuk membantu kamu. Tanyakan apa saja!
+    </p>
+  
+    <!-- Chat Input -->
+    <textarea
+      class="w-full p-3 rounded-lg shadow-md border border-gray-300 focus:outline-none focus:ring focus:ring-purple-300 resize-none"
+      placeholder="Baju apa yang cocok untuk wanita dengan tinggi badan 191cm..."
+      rows="3"
+    ></textarea>
+  
+    <!-- Send Button -->
+    <button
+      class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-lg w-full font-semibold transition duration-300 ease-in-out"
+    >
+      Kirim
+    </button>
+  </div>
+  
+  
+</section>
+
+
+  <!-- Floating Button -->
+  <div id="floatBtn" class="fixed bottom-6 right-6 z-50 w-10 h-8 bg-orange-400 text-white  rounded-full flex justify-center items-center shadow-lg cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 299.283"><path d="M75.334 286.691c-64.764 36.929-96.186-15.595-60.203-51.975L215.997 25.104c33.472-33.472 46.534-33.472
+       80.006 0l200.866 209.612c35.983 36.38 4.561 88.904-60.203 51.975L256 189.339 75.334 286.691z"/></svg>
+  </div>
+
+  </div>
+
+
+
+<script src="scripts/main.js"></script>
+
+
+   <!--  <script async id="vectorshift-chat-widget" src="https://app.vectorshift.ai/chatWidget.js" chatbot-id="67b89718b3c1594e1176b00b" chatbot-height="600px" chatbot-width="400px" />
+  <script src="scripts/main.js"></script> -->
+  
+</body>
+</html>
+ <!-- Footer -->
+ <footer class="py-8 bg-black text-gray-400 w-screen">
+  <div id="footer" class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <!-- Logo and About Section -->
+      <div class="mb-6 md:mb-0 text-center md:text-left">
+        <h3 class="text-white text-lg font-bold">Bashion</h3>
+        <p class="mt-2 text-sm">Your ultimate destination for premium green fashion powered by AI.</p>
+      </div>
+      
+      <!-- Quick Links -->
+      <div class="mb-6 md:mb-0 text-center">
+        <h4 class="text-white text-md font-semibold">Quick Links</h4>
+        <ul class="mt-2 text-sm">
+          <li><a href="#ad-background" class="hover:text-white">Home</a></li>
+          <li><a href="shop.html#bashionShop" class="hover:text-white">Shop</a></li>
+          <li><a href="#who-we-are" class="hover:text-white">About Us</a></li>
+          <li><a href="#bashion-AI" class="hover:text-white">Bashion AI</a></li>
+          <li><a href="#footer" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="text-center md:text-right">
+        <h4 class="text-white text-md font-semibold">Contact Us</h4>
+        <p class="mt-2 text-sm">Email: support@bashion.com</p>
+        <p class="text-sm">Phone: +62 135 195 8200</p>
+        <p class="text-sm">Address: Yogyakarta, Indonesia</p>
+      </div>
+    </div>
+
+    <div class="mt-8 flex justify-center space-x-4">
+      <!-- Social Media Icons -->
+      <a href="www.facebook.com" class="text-gray-400 hover:text-white">
+        <i class="fab fa-facebook fa-lg"></i>
+      </a>
+      <a href="www.x.com" class="text-gray-400 hover:text-white">
+        <i class="fab fa-twitter fa-lg"></i>
+      </a>
+      <a href="www.instagram.com" class="text-gray-400 hover:text-white">
+        <i class="fab fa-instagram fa-lg"></i>
+      </a>
+      <a href="www.linkedin.com" class="text-gray-400 hover:text-white">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </a>
+    </div>
+
+    <div class="mt-6 text-center text-sm">
+      <p>&copy; 2025 Bashion. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

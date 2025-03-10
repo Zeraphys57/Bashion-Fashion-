@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bashion Fashion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/shop.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script type="module" src="./scripts/shop.js" defer></script>
+    <link rel="icon" type="image/webp" href="assets/favicon_io/favicon-32x32.webp">
+    
+   
+</head>
+
+<html>
+  <body class="bg-gradient-to-br from-orange-400  to-purple-300 font-sans overflow-x-hidden scroll-behavior:smooth scrollbar-hide w-full">
+   
+    <header class="fixed top-0 left-0 right-0 z-50 bg-gray-800 text-white  px-4 sm:px-8 py-2 sm:py-3 w-screen h-auto flex justify-between bg-black bg-opacity-0 ">
+      <a href="index.html#ad-background" class=" text-2xl sm:text-5xl drop-shadow-[0_0_10px_rgba(255,127,5,0.8)] text-orange-600 font-bold">Bashion.</a>
+    
+     <!-- Search and Cart Icons -->
+     <div class="flex items-center justify-center gap-6 sm:gap-10 absolute left-1/2 transform -translate-x-1/2">
+      <a href="SearchBar.html" class="text-white mt-1 hover:text-pink-500 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 sm:h-9 sm:w-9" viewBox="0 0 50 50"
+        style="fill: rgb(255,111,0);">
+        <path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z"></path>
+        </svg>
+      </a>
+      <a href="cart.html" class="text-white hover:text-pink-500 transition">
+        <?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 sm:h-9 sm:w-9" style="fill: rgb(255, 111, 0);" viewBox="0 0 32.402 32" id="cart">
+          <path d="M6 30a2 2 1080 1 0 4 0 2 2 1080 1 0-4 0zm18 0a2 2 1080 1 0 4 0 2 2 1080 1 0-4 0zM-.058 5a1 1 0 0 0 1 1H3.02l1.242 5.312L6 20c0 .072.034.134.042.204l-1.018 4.58A.997.997 0 0 0 6 26h22.688a1 1 0 0 0 0-2H7.248l.458-2.06c.1.016.19.06.294.06h18.23c1.104 0 1.77-.218 2.302-1.5l3.248-9.964C32.344 8.75 31.106 8 30 8H6c-.156 0-.292.054-.438.088l-.776-3.316A1 1 0 0 0 3.812 4H.942a1 1 0 0 0-1 1zm6.098 5h23.81l-3.192 9.798c-.038.086-.07.148-.094.19-.066.006-.17.012-.334.012H8v-.198l-.038-.194L6.04 10z"></path>
+        </svg>
+      </a>
+    </div>
+  
+      <!-- Navigasi untuk layar besar -->
+      <nav class="hidden text-2xl sm:flex gap-4 justify-center ">
+        <a href="index.html#ad-background" class="hover:text-pink-500 transition">HOME</a>
+        <a href="#" class="separator text-pink-500"> / </a>
+        <a href="#newThisWeek" class="hover:text-pink-500 transition">NEW</a>
+        <a href="#" class="separator text-pink-500"> / </a>
+        <a href="#bashionShop" class="hover:text-pink-500 transition">STORE</a>
+        <a href="#" class="separator text-pink-500"> / </a>
+        <a href="index.html#bashion-AI" class="hover:text-pink-500 transition">BASHION AI</a>
+      </nav>
+      
+     
+      <!-- Tombol Burger--> 
+      <button id="burger" class=" sm:hidden">
+        <span class="block w-8 h-1 bg-orange-500 mb-1 transition"></span>
+        <span class="block w-8 h-1 bg-orange-500 mb-1 transition"></span>
+        <span class="block w-8 h-1 bg-orange-500 transition"></span>
+      </button>
+    
+  <!-- Menu Mobile -->
+  <div
+    id="menu"
+    class="hidden fixed inset-0 bg-black bg-opacity-80 grid grid-rows-[ 1fr_auto] items-center justify-between p-6 z-50">
+    <!-- Link Menu -->
+    <div class="flex flex-col items-center gap-6">
+      <a href="index.html#ad-background" class="text-lg text-white hover:underline">HOME</a>
+      <a href="#newThisWeek" class="text-lg text-white hover:underline">NEW</a>
+      <a href="#bashionShop" class="text-lg text-white hover:underline">STORE</a>
+      <a href="index.html#bashionAi" class="text-lg text-white hover:underline">BASHION AI</a>
+    </div>
+  
+    <!-- Tombol Close -->
+    <button id="closeMenu" class="fixed relative flex flex-col items-center justify-center w-12 h-12 mt-4">
+      <span class="absolute w-12 h-1 bg-white rotate-45 transform origin-center"></span>
+      <span class="absolute w-12 h-1 bg-white -rotate-45 transform origin-center"></span>
+    </button>
+  </div>
+  
+  
+    </header>
+
+        
+
+      <!-- Main Content -->
+      <main class="pt-16">
+
+        <!-- Carousel -->
+        <section class="bg-black bg-opacity-40">
+          <div id="big-ads" class="container mx-auto px-6 py-8">
+            <div class="relative overflow-hidden h-64 rounded-lg hover:shadow-2xl transition">
+              <div id="carousel" class="flex transition-all duration-500 ease-in-out">
+                <img src="assets/man12.webp" class="w-300 h-200 sm:w-full object-cover">
+                <img src="assets/woman12.webp" class="w-300 h-200 sm:w-full object-cover">
+                <img src="assets/man7.webp" class="w-300 h-200 sm:w-full object-cover">
+
+                <img src="assets/man8.webp" class="w-300 h-200 sm:w-full object-cover">
+                <img src="assets/woman4.webp" class="w-300 h-200 sm:w-full object-cover">
+                <img src="assets/woman9.webp" class="w-300 h-200 sm:w-full object-cover">
+
+                <img src="assets/man2.webp" class="w-300 h-200 sm:w-full object-cover">
+                <img src="assets/man6.webp" class="w-300 h-200 sm:w-full object-cover">
+                <img src="assets/man13.webp" class="w-300 h-200 sm:w-full object-cover">
+
+                
+                <img src="assets/woman1.webp" class="w-300 h-200 sm:w-full object-cover">
+                <img src="assets/woman8.webp" class="w-300 h-200 sm:w-full object-cover">
+                <img src="assets/man5.webp" class="w-300 h-200 sm:w-full object-cover">
+                
+                
+                <img src="assets/fullSuit.webp" class="w-300 h-200 object-cover">
+                <img src="assets/BaggyJeans.webp" class="w-300 h-200 object-cover">
+                <img src="assets/Japanese.webp" class="w-300 h-200 object-cover">
+                
+                
+              </div>
+              <div class="absolute top-1/2 left-4 transform -translate-y-1/2">
+                <button id="prev" class="bg-orange-500 text-white p-2 rounded-full hover:bg-orange-300">❮</button>
+              </div>
+              <div class="absolute top-1/2 right-4 transform -translate-y-1/2">
+                <button id="next" class="bg-orange-500 text-white p-2 rounded-full hover:bg-orange-300">❯</button>
+              </div>
+            </div>
+          </div>
+        </section> 
+
+      <!--NEW THIS WEEK==================================================================================================================================================================================-->
+        <!-- Product List -->
+        <section id="newThisWeek" class="container mx-auto px-2 py-8">
+          <h2 class="text-4xl sm:text-6xl text-white text-center font-extrabold mb-10">New This Week</h2>
+          <div class="flex  sm:max-w-full my-10 mx-10 pb-4 px-1 sm:ml-10 sm:mr-10 overflow-x-scroll scrollbar-hide sm:overflow-x-visible sm:overflow-x-hidden sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            <!-- Product Card -->
+            <div  class="min-w-[290px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+              <a href="shopPreview.html" class="item-link" data-name="Bashion Jacket" data-price="Rp. 10.798.000" data-image="assets/man12.webp">
+                  <img src="assets/man12.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+              </a>
+              <h3 class="text-lg font-bold mt-4">Bashion Jacket</h3>
+              <p class="text-orange-500 font-bold">Rp. 10.798.000</p>
+              <button  onclick="addToCart(this)"  data-name="Bashion Jacket" data-price="Rp. 10.798.000" data-image="assets/man12.webp" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                  Add to Cart</button> 
+              </button>
+            </div>
+
+            <div class="min-w-[290px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+              <a href="shopPreview.html" class="item-link" data-name="Leather Crop Jacket" data-price="Rp. 499.000" data-image="assets/CropJacket.webp">
+                  <img src="assets/CropJacket.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+              </a>
+              <h3 class="text-lg font-bold mt-4">Leather Crop Jacket</h3>
+              <p class="text-orange-500 font-bold">Rp. 499.000</p>
+              <button onclick="addToCart(this)"  data-name="Leather Crop Jacket" data-price="Rp. 499.000" data-image="assets/CropJacket.webp" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                  Add to Cart
+              </button>
+          </div>
+
+            <div class="min-w-[290px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+              <a href="shopPreview.html" class="item-link" data-name="Lolo Cargo Set" data-price="Rp. 419.000" data-image="assets/man7.webp">
+                  <img src="assets/man7.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+              </a>
+              <h3 class="text-lg font-bold mt-4">Lolo Cargo Set</h3>
+              <p class="text-orange-500 font-bold">Rp. 419.000</p>
+              <button onclick="addToCart(this)"  data-name="Lolo Cargo Set" data-price="Rp. 419.000" data-image="assets/man7.webp" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                  Add to Cart
+              </button>
+            </div>
+
+            <div class="min-w-[290px] min-h-[400px] bg-white rounded-lg shadow-md p-4 flex-shrink-0">
+              <a href="shopPreview.html" class="item-link" data-name="Bashion Outlaw" data-price="Rp. 875.000" data-image="assets/fullSuit.webp">
+                  <img src="assets/fullSuit.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+              </a>
+              <h3 class="text-lg font-bold mt-4">Bashion Outlaw</h3>
+              <p class="text-orange-500 font-bold">Rp. 875.000</p>
+              <button onclick="addToCart(this)"  data-name="Bashion Outlaw" data-price="Rp. 875.000" data-image="assets/fullSuit.webp" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                  Add to Cart
+              </button>
+            </div>
+            
+            <div class="min-w-[290px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+              <a href="shopPreview.html" class="item-link" data-name="Woman Flower Pants" data-price="Rp. 3.199.000" data-image="assets/woman9.webp">
+                  <img src="assets/woman9.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+              </a>
+              <h3 class="text-lg font-bold mt-4">Woman Flower Pants</h3>
+              <p class="text-orange-500 font-bold">Rp. 3.199.000</p>
+              <button onclick="addToCart(this)"  data-name="Woman Flower Pants" data-price="Rp. 3.199.000" data-image="assets/woman9.webp" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                  Add to Cart
+              </button>
+          </div>
+            <!-- Repeat More Product Cards -->
+            <!-- Add more items here (copy product card and modify details) -->
+          </div>
+        </section>
+
+
+      <!--MAN SECTION==================================================================================================================================================================================-->
+        <section id="bestSale" class="bg-opacity-0 mx-auto my-10 w-full">
+          <h2 class="text-3xl text-white font-semibold text-start ml-14 mt-10 hover:text-orange-700 transition mb-10">MAN STORE</h2>
+          <div class="container sm:max-w-full my-10 pb-4 px-0 sm:ml-10 sm:mr-20 overflow-x-scroll scrollbar-hide">
+            
+            <div class="flex gap-4"> 
+
+              <!-- Tombol panah keci kanan -->
+            <div
+            id="arrow-right"
+            class="lg:hidden bottom-4 left-1 z-50  flex items-center"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+
+
+        <!-- Product Cards -->
+        <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+            <a href="shopPreview.html" class="item-link" data-name="Grey Long Pants" data-price="Rp. 329.000" data-image="assets/man1.webp">
+                <img src="assets/man1.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+            </a>
+            <h3 class="text-lg font-bold mt-4">Grey Long Pants</h3>
+            <p class="text-orange-500 font-bold">Rp. 329.000</p>
+            <button onclick="addToCart(this)" data-image="assets/man1.webp" data-name="Grey Long Pants" data-price="Rp. 329.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+          <a href="shopPreview.html" class="item-link" data-name="Knit Jacket" data-price="Rp. 359.000" data-image="assets/man4.webp">
+              <img src="assets/man4.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+          </a>
+          <h3 class="text-lg font-bold mt-4">Knit Jacket</h3>
+          <p class="text-orange-500 font-bold">Rp. 359.000</p>
+          <button onclick="addToCart(this)" data-image="assets/man4.webp"  data-name="Knit Jacket" data-price="Rp. 359.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+              Add to Cart
+          </button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+        <a href="shopPreview.html" class="item-link" data-name="Man Rusher Edition" data-price="Rp. 399.000" data-image="assets/man5.webp">
+            <img src="assets/man5.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+        </a>
+        <h3 class="text-lg font-bold mt-4">Man Rusher Edition</h3>
+        <p class="text-orange-500 font-bold">Rp. 399.000</p>
+        <button onclick="addToCart(this)" data-image="assets/man5.webp" data-name="Man Rusher Edition" data-price="Rp. 399.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+            Add to Cart
+        </button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+        <a href="shopPreview.html" class="item-link" data-name="Pablo Outer" data-price="Rp. 629.000" data-image="assets/man6.webp">
+            <img src="assets/man6.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+        </a>
+        <h3 class="text-lg font-bold mt-4">Pablo Outer</h3>
+        <p class="text-orange-500 font-bold">Rp. 629.000</p>
+        <button onclick="addToCart(this)" data-image="assets/man6.webp"  data-name="Pablo Outer" data-price="Rp. 629.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+            Add to Cart
+        </button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+        <a href="shopPreview.html" class="item-link" data-name="Lolo Cargo Set" data-price="Rp. 419.000" data-image="assets/man7.webp">
+            <img src="assets/man7.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+        </a>
+        <h3 class="text-lg font-bold mt-4">Lolo Cargo Set</h3>
+        <p class="text-orange-500 font-bold">Rp. 419.000</p>
+        <button onclick="addToCart(this)" data-image="assets/man7.webp" data-name="Lolo Cargo Set" data-price="Rp. 419.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+            Add to Cart
+        </button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+        <a href="shopPreview.html" class="item-link" data-name="Man Socks" data-price="Rp. 50.000" data-image="assets/man11.webp">
+            <img src="assets/man11.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+        </a>
+        <h3 class="text-lg font-bold mt-4">Man Socks</h3>
+        <p class="text-orange-500 font-bold">Rp. 50.000</p>
+        <button onclick="addToCart(this)" data-image="assets/man11.webp" data-name="Man Socks" data-price="Rp. 50.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+            Add to Cart
+        </button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+        <a href="shopPreview.html" class="item-link" data-name="Bashion Jacket" data-price="Rp. 10.798.000" data-image="assets/man12.webp">
+            <img src="assets/man12.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+        </a>
+        <h3 class="text-lg font-bold mt-4">Bashion Jacket</h3>
+        <p class="text-orange-500 font-bold">Rp. 10.798.000</p>
+        <button onclick="addToCart(this)" data-image="assets/man12.webp" data-name="Bashion Jacket" data-price="Rp. 10.798.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+            Add to Cart
+        </button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+        <a href="shopPreview.html" class="item-link" data-name="Bashion X UniQlu" data-price="Rp. 970.000" data-image="assets/man13.webp">
+            <img src="assets/man13.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+        </a>
+        <h3 class="text-lg font-bold mt-4">Bashion X UniQlu</h3>
+        <p class="text-orange-500 font-bold">Rp. 970.000</p>
+        <button onclick="addToCart(this)" data-image="assets/man13.webp" data-name="Bashion X UniQlu" data-price="Rp. 970.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+            Add to Cart
+        </button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4 flex-shrink-0">
+        <a href="shopPreview.html" class="item-link" data-name="Bashion Outlaw" data-price="Rp. 875.000" data-image="assets/fullSuit.webp">
+            <img src="assets/fullSuit.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+        </a>
+        <h3 class="text-lg font-bold mt-4">Bashion Outlaw</h3>
+        <p class="text-orange-500 font-bold">Rp. 875.000</p>
+        <button onclick="addToCart(this)" data-image="assets/fullSuit.webp" data-name="Bashion Outlaw" data-price="Rp. 875.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+            Add to Cart
+        </button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4 flex-shrink-0">
+        <a href="shopPreview.html" class="item-link" data-name="Green Cargo" data-price="Rp. 175.000" data-image="assets/cargo.webp">
+            <img src="assets/cargo.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+        </a>
+        <h3 class="text-lg font-bold mt-4">Green Cargo</h3>
+        <p class="text-orange-500 font-bold">Rp. 175.000</p>
+        <button onclick="addToCart(this)" data-image="assets/cargo.webp" data-name="Green Cargo" data-price="Rp. 175.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+            Add to Cart
+        </button>
+      </div>
+
+
+            <!-- Tombol Panah kecil Kiri -->
+            <div
+            id="arrow-left"
+            class="lg:hidden bottom-4 right-1 z-50  flex items-center"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </div>
+
+          
+      </div>
+      </div>
+      </section>
+
+<!--WOMAN SECTION==================================================================================================================================================================================-->
+      <section id="bestSale" class="bg-opacity-0 mx-auto my-10 w-full ">
+        <h2 class="text-3xl text-white font-semibold text-start ml-14 mt-10 hover:text-orange-700 transition mb-10">WOMAN STORE</h2>
+        <div class="container sm:max-w-full my-10 pb-4 px-0 sm:ml-10 sm:mr-20 overflow-x-scroll scrollbar-hide">
+          
+          <div class="flex gap-4"> 
+
+            <!-- Tombol panah keci kanan -->
+          <div
+          id="arrow-right"
+          class="lg:hidden bottom-4 left-1 z-50  flex items-center"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+
+
+      <!-- Product Cards -->
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+        <a href="shopPreview.html" class="item-link" data-name="Striped T-shirt" data-price="Rp. 419.000" data-image="assets/woman1.webp">
+            <img src="assets/woman1.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+        </a>
+        <h3 class="text-lg font-bold mt-4">Striped T-shirt</h3>
+        <p class="text-orange-500 font-bold">Rp. 419.000</p>
+        <button onclick="addToCart(this)" data-image="assets/woman1.webp" data-name="Striped T-shirt" data-price="Rp. 419.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+            Add to Cart
+        </button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+        <a href="shopPreview.html" class="item-link" data-name="Blue Flanel" data-price="Rp. 799.000" data-image="assets/woman2.webp">
+            <img src="assets/woman2.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+        </a>
+        <h3 class="text-lg font-bold mt-4">Blue Flanel</h3>
+        <p class="text-orange-500 font-bold">Rp. 799.000</p>
+        <button onclick="addToCart(this)" data-image="assets/woman2.webp" data-name="Blue Flanel" data-price="Rp. 799.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+            Add to Cart
+        </button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+        <a href="shopPreview.html" class="item-link" data-name="Luck Dress" data-price="Rp. 1.209.000" data-image="assets/woman3.webp">
+            <img src="assets/woman3.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+        </a>
+        <h3 class="text-lg font-bold mt-4">Luck Dress</h3>
+        <p class="text-orange-500 font-bold">Rp. 1.209.000</p>
+        <button onclick="addToCart(this)" data-image="assets/woman3.webp" data-name="Luck Dress" data-price="Rp. 1.209.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+            Add to Cart
+        </button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+        <a href="shopPreview.html" class="item-link" data-name="Luxury Diamond Dress" data-price="Rp. 899.000" data-image="assets/woman4.webp">
+            <img src="assets/woman4.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+        </a>
+        <h3 class="text-lg font-bold mt-4">Luxury Diamond Dress</h3>
+        <p class="text-orange-500 font-bold">Rp. 899.000</p>
+        <button onclick="addToCart(this)" data-image="assets/woman4.webp" data-name="Luxury Diamond Dress" data-price="Rp. 899.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+            Add to Cart
+        </button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+        <a href="shopPreview.html" class="item-link" data-name="Maten Shirt" data-price="Rp. 550.000" data-image="assets/woman7.webp">
+            <img src="assets/woman7.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+        </a>
+        <h3 class="text-lg font-bold mt-4">Maten Shirt</h3>
+        <p class="text-orange-500 font-bold">Rp. 550.000</p>
+        <button onclick="addToCart(this)" data-image="assets/woman7.webp" data-name="Maten Shirt" data-price="Rp. 550.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+            Add to Cart
+        </button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+        <a href="shopPreview.html" class="item-link" data-name="Woman Flower Pants" data-price="Rp. 3.199.000" data-image="assets/woman9.webp">
+            <img src="assets/woman9.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+        </a>
+        <h3 class="text-lg font-bold mt-4">Woman Flower Pants</h3>
+        <p class="text-orange-500 font-bold">Rp. 3.199.000</p>
+        <button onclick="addToCart(this)" data-image="assets/woman9.webp" data-name="Woman Flower Pants" data-price="Rp. 3.199.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+            Add to Cart
+        </button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+        <a href="shopPreview.html" class="item-link" data-name="Woman Socks" data-price="Rp. 28.000" data-image="assets/woman11.webp">
+            <img src="assets/woman11.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+        </a>
+        <h3 class="text-lg font-bold mt-4">Woman Socks</h3>
+        <p class="text-orange-500 font-bold">Rp. 28.000</p>
+        <button onclick="addToCart(this)" data-image="assets/woman11.webp" data-name="Woman Socks" data-price="Rp. 28.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+            Add to Cart
+        </button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4">
+        <a href="shopPreview.html" class="item-link" data-name="Green Jeans Outer" data-price="Rp. 299.000" data-image="assets/woman12.webp">
+            <img src="assets/woman12.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+        </a>
+        <h3 class="text-lg font-bold mt-4">Green Jeans Outer</h3>
+        <p class="text-orange-500 font-bold">Rp. 299.000</p>
+        <button onclick="addToCart(this)" data-image="assets/woman12.webp" data-name="Green Jeans Outer" data-price="Rp. 299.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+            Add to Cart
+        </button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4 flex-shrink-0">
+        <a href="shopPreview.html" class="item-link" data-name="Item 1" data-price="$29.99" data-image="assets/Japanese.webp">
+            <img src="assets/Japanese.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+        </a>
+        <h3 class="text-lg font-bold mt-4">Bashion Kimono</h3>
+        <p class="text-orange-500 font-bold">Rp. 999.000</p>
+        <button onclick="addToCart(this)" data-image="assets/Japanese.webp" data-name="Bashion Kimono" data-price="Rp. 999.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+            Add to Cart
+        </button>
+      </div>
+
+      <div class="min-w-[350px] min-h-[400px] bg-white rounded-lg shadow-md p-4 flex-shrink-0">
+        <a href="shopPreview.html" class="item-link" data-name="Item 1" data-price="$29.99" data-image="assets/jeansDress.webp">
+            <img src="assets/jeansDress.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+        </a>
+        <h3 class="text-lg font-bold mt-4">Jeans Dress</h3>
+        <p class="text-orange-500 font-bold">Rp. 229.000</p>
+        <button onclick="addToCart(this)" data-image="assets/jeansDress.webp" data-name="Jeans Dress" data-price="Rp. 229.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+            Add to Cart
+        </button>
+      </div>
+
+          <!-- Tombol Panah kecil Kiri -->
+          <div
+          id="arrow-left"
+          class="lg:hidden bottom-4 right-1 z-50  flex items-center"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </div>
+
+        
+      </div>
+      </div>
+      </section>
+
+<div>
+  <p></p>
+</div>
+
+
+
+<!--SHOP SECTION==================================================================================================================================================================================-->
+        <!-- Product List -->
+        <section id="bashionShop" class="container w-full mx-auto px-2 py-8">
+          <h2 class="sm:text-8xl text-4xl text-white font-extrabold flex justify-center mb-8">BASHION STORE</h2>
+          <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mx-3 overflow-x-scroll sm:overflow-x-hidden">
+            <!-- Product Card -->
+                      <div class="bg-white rounded-lg shadow-md p-4">
+                          <a href="shopPreview.html" class="item-link" data-name="Era Flanel" data-price="Rp. 399.000" data-image="assets/eraFlanel.webp">
+                              <img src="assets/eraFlanel.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+                          </a>
+                          <h3 class="text-lg font-bold mt-4">Era Flanel</h3>
+                          <p class="text-orange-500 font-bold">Rp. 399.000</p>
+                          <button onclick="addToCart(this)" data-image="assets/eraFlanel.webp" data-name="Era Flanel" data-price="Rp. 399.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                              Add to Cart
+                          </button>
+                      </div>
+
+                      <div class="bg-white rounded-lg shadow-md p-4">
+                        <a href="shopPreview.html" class="item-link" data-name="Knit Jacket" data-price="Rp. 359.000" data-image="assets/man4.webp">
+                            <img src="assets/man4.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+                        </a>
+                        <h3 class="text-lg font-bold mt-4">Knit Jacket</h3>
+                        <p class="text-orange-500 font-bold">Rp. 359.000</p>
+                        <button onclick="addToCart(this)" data-image="assets/man4.webp" data-name="Knit Jacket" data-price="Rp. 359.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                            Add to Cart
+                        </button>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-4">
+                      <a href="shopPreview.html" class="item-link" data-name="Blue Flanel" data-price="Rp. 799.000" data-image="assets/woman2.webp">
+                          <img src="assets/woman2.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+                      </a>
+                      <h3 class="text-lg font-bold mt-4">Blue Flanel</h3>
+                      <p class="text-orange-500 font-bold">Rp. 799.000</p>
+                      <button onclick="addToCart(this)" data-image="assets/woman2.webp" data-name="Blue Flanel" data-price="Rp. 799.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                          Add to Cart
+                      </button>
+                  </div>
+                  
+                  <div class="bg-white rounded-lg shadow-md p-4">
+                      <a href="shopPreview.html" class="item-link" data-name="Grey Long Pants" data-price="Rp. 329.000" data-image="assets/man1.webp">
+                          <img src="assets/man1.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+                      </a>
+                      <h3 class="text-lg font-bold mt-4">Grey Long Pants</h3>
+                      <p class="text-orange-500 font-bold">Rp. 329.000</p>
+                      <button onclick="addToCart(this)" data-image="assets/man1.webp" data-name="Grey Long Pants" data-price="Rp. 329.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                          Add to Cart
+                      </button>
+                  </div>
+                  
+                  <div class="bg-white rounded-lg shadow-md p-4">
+                      <a href="shopPreview.html" class="item-link" data-name="Maten Shirt" data-price="Rp. 550.000" data-image="assets/woman7.webp">
+                          <img src="assets/woman7.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+                      </a>
+                      <h3 class="text-lg font-bold mt-4">Maten Shirt</h3>
+                      <p class="text-orange-500 font-bold">Rp. 550.000</p>
+                      <button onclick="addToCart(this)" data-image="assets/woman7.webp" data-name="Maten Shirt" data-price="Rp. 550.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                          Add to Cart
+                      </button>
+                  </div>
+                  
+                  <div class="bg-white rounded-lg shadow-md p-4">
+                      <a href="shopPreview.html" class="item-link" data-name="Woman Flower Pants" data-price="Rp. 3.199.000" data-image="assets/woman9.webp">
+                          <img src="assets/woman9.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+                      </a>
+                      <h3 class="text-lg font-bold mt-4">Woman Flower Pants</h3>
+                      <p class="text-orange-500 font-bold">Rp. 3.199.000</p>
+                      <button onclick="addToCart(this)" data-image="assets/woman9.webp" data-name="Woman Flower Pants" data-price="Rp. 3.199.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                          Add to Cart
+                      </button>
+                  </div>
+
+                  <div class="bg-white rounded-lg shadow-md p-4">
+                    <a href="shopPreview.html" class="item-link" data-name="Luck Dress" data-price="Rp. 1.209.000" data-image="assets/woman3.webp">
+                        <img src="assets/woman3.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+                    </a>
+                    <h3 class="text-lg font-bold mt-4">Luck Dress</h3>
+                    <p class="text-orange-500 font-bold">Rp. 1.209.000</p>
+                    <button onclick="addToCart(this)" data-image="assets/woman3.webp" data-name="Luck Dress" data-price="Rp. 1.209.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                        Add to Cart
+                    </button>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <a href="shopPreview.html" class="item-link" data-name="Man Rusher Edition" data-price="Rp. 399.000" data-image="assets/man5.webp">
+                        <img src="assets/man5.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+                    </a>
+                    <h3 class="text-lg font-bold mt-4">Man Rusher Edition</h3>
+                    <p class="text-orange-500 font-bold">Rp. 399.000</p>
+                    <button onclick="addToCart(this)" data-image="assets/man5.webp" data-name="Man Rusher Edition" data-price="Rp. 399.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                        Add to Cart
+                    </button>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <a href="shopPreview.html" class="item-link" data-name="Luxury Diamond Dress" data-price="Rp. 899.000" data-image="assets/woman4.webp">
+                        <img src="assets/woman4.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+                    </a>
+                    <h3 class="text-lg font-bold mt-4">Luxury Diamond Dress</h3>
+                    <p class="text-orange-500 font-bold">Rp. 899.000</p>
+                    <button onclick="addToCart(this)" data-image="assets/woman4.webp" data-name="Luxury Diamond Dress" data-price="Rp. 899.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                        Add to Cart
+                    </button>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-4">
+                    <a href="shopPreview.html" class="item-link" data-name="Man Socks" data-price="Rp. 50.000" data-image="assets/man11.webp">
+                        <img src="assets/man11.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+                    </a>
+                    <h3 class="text-lg font-bold mt-4">Man Socks</h3>
+                    <p class="text-orange-500 font-bold">Rp. 50.000</p>
+                    <button onclick="addToCart(this)" data-image="assets/man11.webp" data-name="Man Socks" data-price="Rp. 50.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                        Add to Cart
+                    </button>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-4">
+                  <a href="shopPreview.html" class="item-link" data-name="Pablo Outer" data-price="Rp. 629.000" data-image="assets/man6.webp">
+                      <img src="assets/man6.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+                  </a>
+                  <h3 class="text-lg font-bold mt-4">Pablo Outer</h3>
+                  <p class="text-orange-500 font-bold">Rp. 629.000</p>
+                  <button data-name="Pablo Outer" data-image="assets/man6.webp" data-price="Rp. 629.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                      Add to Cart
+                  </button>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-md p-4">
+                  <a href="shopPreview.html" class="item-link" data-name="Striped T-shirt" data-price="Rp. 419.000" data-image="assets/woman1.webp">
+                      <img src="assets/woman1.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+                  </a>
+                  <h3 class="text-lg font-bold mt-4">Striped T-shirt</h3>
+                  <p class="text-orange-500 font-bold">Rp. 419.000</p>
+                  <button onclick="addToCart(this)" data-image="assets/woman1.webp" data-name="Striped T-shirt" data-price="Rp. 419.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                      Add to Cart
+                  </button>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-md p-4">
+                  <a href="shopPreview.html" class="item-link" data-name="Lolo Cargo Set" data-price="Rp. 419.000" data-image="assets/man7.webp">
+                      <img src="assets/man7.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+                  </a>
+                  <h3 class="text-lg font-bold mt-4">Lolo Cargo Set</h3>
+                  <p class="text-orange-500 font-bold">Rp. 419.000</p>
+                  <button onclick="addToCart(this)" data-image="assets/man7.webp" data-name="Lolo Cargo Set" data-price="Rp. 419.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                      Add to Cart
+                  </button>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-md p-4">
+                  <a href="shopPreview.html" class="item-link" data-name="Woman Socks" data-price="Rp. 28.000" data-image="assets/woman11.webp">
+                      <img src="assets/woman11.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+                  </a>
+                  <h3 class="text-lg font-bold mt-4">Woman Socks</h3>
+                  <p class="text-orange-500 font-bold">Rp. 28.000</p>
+                  <button onclick="addToCart(this)" data-image="assets/woman11.webp" data-name="Woman Socks" data-price="Rp. 28.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                      Add to Cart
+                  </button>
+              </div>
+              
+              <div class="bg-white rounded-lg shadow-md p-4">
+                  <a href="shopPreview.html" class="item-link" data-name="Bashion Jacket" data-price="Rp. 10.798.000" data-image="assets/man12.webp">
+                      <img src="assets/man12.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+                  </a>
+                  <h3 class="text-lg font-bold mt-4">Bashion Jacket</h3>
+                  <p class="text-orange-500 font-bold">Rp. 10.798.000</p>
+                  <button onclick="addToCart(this)" data-image="assets/man12.webp" data-name="Bashion Jacket" data-price="Rp. 10.798.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                      Add to Cart
+                  </button>
+              </div>
+
+              <div class="bg-white rounded-lg shadow-md p-4">
+                <a href="shopPreview.html" class="item-link" data-name="Green Jeans Outer" data-price="Rp. 299.000" data-image="assets/woman12.webp">
+                    <img src="assets/woman12.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+                </a>
+                <h3 class="text-lg font-bold mt-4">Green Jeans Outer</h3>
+                <p class="text-orange-500 font-bold">Rp. 299.000</p>
+                <button onclick="addToCart(this)" data-image="assets/woman12.webp" data-name="Green Jeans Outer" data-price="Rp. 299.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <a href="shopPreview.html" class="item-link" data-name="Bashion X UniQlu" data-price="Rp. 970.000" data-image="assets/man13.webp">
+                    <img src="assets/man13.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+                </a>
+                <h3 class="text-lg font-bold mt-4">Bashion X UniQlu</h3>
+                <p class="text-orange-500 font-bold">Rp. 970.000</p>
+                <button onclick="addToCart(this)" data-image="assets/woman13.webp" data-name="Bashion X UniQlu" data-price="Rp. 970.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-4">
+                <a href="shopPreview.html" class="item-link" data-name="Leather Crop Jacket" data-price="Rp. 499.000" data-image="assets/CropJacket.webp">
+                    <img src="assets/CropJacket.webp" alt="Product Image" class="w-full h-48 object-cover rounded-lg">
+                </a>
+                <h3 class="text-lg font-bold mt-4">Leather Crop Jacket</h3>
+                <p class="text-orange-500 font-bold">Rp. 499.000</p>
+                <button onclick="addToCart(this)" data-image="assets/CropJacket.webp" data-name="Leather Crop Jacket" data-price="Rp. 499.000" class="addToCart bg-orange-500 text-white px-4 py-2 mt-4 rounded hover:bg-orange-600 w-full">
+                    Add to Cart
+                </button>
+            </div>
+
+           
+          </div>
+        </section>
+
+
+<!-- Collection Section with Infinite Carousel========================================================================================================================================================================================= -->
+  <section class="py-20 bg-gray-900">
+    <h2 id="collectionTitle" class="text-4xl sm:text-7xl font-extrabold text-white text-center mb-12">Our Collection</h2>
+    <div class="container px-4 max-w-screen-lg">
+      <div id="carousel" class="carousel flex gap-4 scrollbar-hide sm:w-screen sm:max-w-screen  px-4 sm:scrollbar-x-hide overflow-x-hidden ">
+        <div id="carouselItems" class="flex gap-8 w-[calc(100%+1rem)]-lg hidden:overflow-x-sm overflow-hidden carousel flex-shrink-0 ">
+          <!-- Repeatable Items -->
+          <div class="carouselItem w-80 h-96 bg-cover bg-center rounded-lg shadow-lg" style="background-image: url('assets/CropJacket.webp');"></div>
+          <div class="carouselItem w-80 h-96 bg-cover bg-center rounded-lg shadow-lg" style="background-image: url('assets/fullSuit.webp');"></div>
+          <div class="carouselItem w-80 h-96 bg-cover bg-center rounded-lg shadow-lg" style="background-image: url('assets/womenLeatherShoes.webp');"></div>
+          <div class="carouselItem w-80 h-96 bg-cover bg-center rounded-lg shadow-lg" style="background-image: url('assets/Japanese.webp');"></div>
+          <div class="carouselItem w-80 h-96 bg-cover bg-center rounded-lg shadow-lg" style="background-image: url('assets/raincoatJacket.webp');"></div>
+          <div class="carouselItem w-80 h-96 bg-cover bg-center rounded-lg shadow-lg" style="background-image: url('assets/eraFlanel.webp');"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+      </main>
+
+
+
+
+      <div id="toastContainer" class="fixed top-5 right-5 z-50 space-y-4"></div>
+  
+      <script src="scripts/shop.js"></script>
+      </body> 
+
+</html>
+
+ <!-- Footer -->
+ <footer class="py-8 bg-black text-gray-400 w-screen">
+  <div id="footer" class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <!-- Logo and About Section -->
+      <div class="mb-6 md:mb-0 text-center md:text-left">
+        <h3 class="text-white text-lg font-bold">Bashion</h3>
+        <p class="mt-2 text-sm">Your ultimate destination for premium green fashion powered by AI.</p>
+      </div>
+      
+      <!-- Quick Links -->
+      <div class="mb-6 md:mb-0 text-center">
+        <h4 class="text-white text-md font-semibold">Quick Links</h4>
+        <ul class="mt-2 text-sm">
+          <li><a href="#ad-background" class="hover:text-white">Home</a></li>
+          <li><a href="shop.html#bashionShop" class="hover:text-white">Shop</a></li>
+          <li><a href="#who-we-are" class="hover:text-white">About Us</a></li>
+          <li><a href="#bashion-AI" class="hover:text-white">Bashion AI</a></li>
+          <li><a href="#footer" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="text-center md:text-right">
+        <h4 class="text-white text-md font-semibold">Contact Us</h4>
+        <p class="mt-2 text-sm">Email: support@bashion.com</p>
+        <p class="text-sm">Phone: +62 135 195 8200</p>
+        <p class="text-sm">Address: Yogyakarta, Indonesia</p>
+      </div>
+    </div>
+
+    <div class="mt-8 flex justify-center space-x-4">
+      <!-- Social Media Icons -->
+      <a href="www.facebook.com" class="text-gray-400 hover:text-white">
+        <i class="fab fa-facebook fa-lg"></i>
+      </a>
+      <a href="www.x.com" class="text-gray-400 hover:text-white">
+        <i class="fab fa-twitter fa-lg"></i>
+      </a>
+      <a href="www.instagram.com" class="text-gray-400 hover:text-white">
+        <i class="fab fa-instagram fa-lg"></i>
+      </a>
+      <a href="www.linkedin.com" class="text-gray-400 hover:text-white">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </a>
+    </div>
+
+    <div class="mt-6 text-center text-sm">
+      <p>&copy; 2025 Bashion. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
